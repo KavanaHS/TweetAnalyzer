@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+		<h1> <u> Trending Tweet's:</u> </h1>
+	<body>
+	<form action="main">
+		What to search for? <input type="text" name="keyword">
+		<input type="text" name="keyword">
+		<input type="submit" value="Search">
+	</form>
+	<style>
+		table{
+			padding-bottom: 2;
+
+		}
+		body{
+           
+            background-image:url(/static/images/gg.png);
+            background-repeat: no-repeat;
+             background-attachment: fixed;  
+  background-size: cover;
+          }
+
+		Button{
+			border-top-width: thick;
+			  width: 20%;
+		}
+		input{
+			font-family: Georgia, serif;
+  border-collapse: collapse;
+  font-size: 20px;
+  width: 20%;
+  height: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  font-style: oblique;
+  padding-bottom: 2px;
+		}
+h1 {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+h2{
+	 color: black;
+            font-style: bold;
+            font-family: cursive;
+}
+
+
+td,th{
+  border: 2px solid #dddddd;
+  text-align: left;
+  padding: 10px;
+  font-size: 18px;
+
+}
+th{
+	color: white;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<table>
+
+	<th>Text</th><th>Sentimental</th>
+	
+	{% for i in ptweets %}
+  <tr>
+    <td>{{i.text}}</td>
+    <td>{{i.sentiment}}</td>
+    
+  </tr>
+	{% endfor %}
+
+	<div id='chart' ></div>
+
+		</table>
+		<center>
+	<span>
+		<button><a href="http://localhost:8000/" style="animation: step-end;"><h3>Back</h3></a></button>
+	</span>
+</center>
+
+</body>
+<script>
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "Tweet Report :"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			values: {{values | safe}},
+  			labels: {{labels | safe}},
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 450px; width: 500%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

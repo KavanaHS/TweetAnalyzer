@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>sub</title>
+</head>{{list}}
+<form action="list" >
+	{% csrf_token %}
+<body>
+	{% for i in list %}
+	<table>
+		<tr>
+			<td>{{i.name}}</td><td>{{i.email}}</td>
+		</tr>
+	</table>
+{{list}}
+</body>
+</form>
+{% endfor %}
+</html>

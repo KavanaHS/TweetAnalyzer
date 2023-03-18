@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Us</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+</head>	
+
+<body>
+
+	{% csrf_token%}
+	<div class="section">
+		<div class="container">
+			<div class="content-section">
+				<div class="title">
+					<h1>About Us</h1>
+				</div>
+				<div class="content">
+					
+					<p><b><h3> Project Team Members :</h3></b></p>
+						<p> Gagan S</p>
+						<p> Basavaraju MP </p>
+					<p>The project is made for Natural Language Processing. It includes Twitter news extraction through tweets, Tweets Processing (cleaning), Sentiment Analysis, Language detection, and Language Translation.
+ UI (User Interface) is made using HTML, CSS and JavaScript, and the functionality is provided using a very popular python framework called Django.
+ <p>a)	The main objective of this project is to display the new latest trends.</p>
+<p>b)	To determine the opinion of mass in positive or negative towards the subject of interest.</p>
+<p>c)	Graphical representation of the analysis in the form of bar graph, pie-chart.</p>
+	
+</p>
+					<div class="button">
+						<a href="http://localhost:8000">Back</a>
+					</div>
+				</div>
+				<div class="social">
+					<a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+					<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+			<div class="image-section">
+			 	<img src="static/images/g3.jpg">
+			</div>
+		</div>
+	</div>
+
+	
+</body>
+</html>

@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Tweet Analyzer</title>
+  
+        
+          <style>
+        body{
+           
+            background-image:url(/static/images/gg.png);
+            background-size: cover;
+                   }
+        h3{
+            color: black;
+            font-family: cursive;
+            font-style: bold;
+            background-color:skyblue ;
+
+        }
+        li{
+          font-size: 20px; 
+           
+           font-style: bold; 
+        }
+       Button{
+            border-top-width: thick;
+              width: 10%;
+              font-size: 18px;
+              font-style: bold;
+
+
+        }
+h2{
+    color: black;
+            font-family: sans-serif;
+            font-style: bold; 
+           font-size: 30px;
+}
+       
+    </style>
+</head>
+<body>
+    <h2><u>Tweet Analyzer</u></h2>
+    {% csrf_token%}
+    {% for key,value in dict.items %}
+        <hr><h3>{{key}}</h3><hr>
+        <ul>
+        
+            <li>{{value.text}}</li>
+            <li>{{value.sentiment}}</li>
+             <li>{{value.lang}}</li>
+              
+        
+        </ul>
+        
+
+    {% endfor %}
+</body>
+<center>
+    <span>
+        <button><a href="http://localhost:8000/" style="animation: step-end;"><h4>Back</h4></a></button>
+        <Button><a href="http://localhost:8000/main" style="animation: step-end;"><h4>Report</h4></a></Button>
+    </span>
+</center>
+
+</html>

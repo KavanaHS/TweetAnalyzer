@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Analyzer</title>
+    <style>
+        body{
+            background-color: azure;
+        }
+        ul{
+            color: #333333;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tweet Analyzer</h2>
+    {% csrf_token%}
+    {% for key,value in dict.items %}
+        <hr><h4>{{key}}</h4><hr>
+        <ul>
+        
+            <li>{{value.text}}</li>
+            <li>{{value.sentiment}}</li>
+             <li>{{value.lang}}</li>
+        
+        </ul>
+        
+
+    {% endfor %}
+</body>
+<center><Button><a href="http://localhost:8000">Back</a></Button></center>
+<center><Button><a href="http://localhost:8000/percentage">Report</a></Button></center>
+</html>
